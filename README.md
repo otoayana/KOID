@@ -8,7 +8,7 @@
    \|__|     \/__/     \/__/     \/__/
    
 ```
-### A lightweight social network built with Laravel.
+### A lightweight social network.
 
 ## Contibutors
 - mintphin
