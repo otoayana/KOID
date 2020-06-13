@@ -1,0 +1,16 @@
+Options +FollowSymLinks -Indexes
+RewriteEngine On
+RewriteRule ^$ /php/index.php [L,NC,QSA]
+RewriteRule ^login$ /php/login.php [L,NC,QSA]
+RewriteRule ^logout$ /php/logout.php [L,NC,QSA]
+RewriteRule ^signup$ /php/signup.php [L,NC,QSA]
+RewriteRule ^rules$ /php/rules.php [L,NC,QSA]
+RewriteRule ^search$ /php/search.php [L,NC,QSA]
+RewriteRule ^users\/@me$ /php/me.php [L,NC,QSA]
+RewriteRule ^users\/([^\/]+)\.(un)?follow\.json$ /php/follow.php?username=$1&un=$2 [L,NC,QSA]
+RewriteRule ^users\/([^\/]+)$ /php/user-profile.php?username=$1 [L,NC,QSA]
+RewriteRule ^users\/([^\/]+)\/(following|followers)$ /php/user-follows.php?username=$1&type=$2 [L,NC,QSA]
+RewriteRule ^settings\/profile$ /php/profile-settings.php [L,NC,QSA]
+RewriteRule ^settings\/account$ /php/account-settings.php [L,NC,QSA]
+ErrorDocument 403 /php/403.php
+ErrorDocument 404 /php/404.php
