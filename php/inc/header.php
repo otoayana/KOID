@@ -6,7 +6,6 @@ require_once('connect.php');
         <meta charset="utf-8">
         <title><?=isset($title) ? htmlspecialchars($title) . ' - ' : ''?>KOID</title>
         <meta http-equiv="content-style-type" content="text/css">
-        <meta http-equiv="content-script-type" content="text/javascript">
         <meta name="format-detection" content="telephone=no">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <meta name="apple-mobile-web-app-title" content="KOID">
@@ -26,7 +25,7 @@ require_once('connect.php');
         <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/apple-touch-icon-72x72.png">
         <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/apple-touch-icon-144x144.png">
         <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
-        <script src="https://kit.fontawesome.com/f41de4a235.js" crossorigin="anonymous"></script>
+        <link href="/assets/css/fa.css" rel="stylesheet">
     </head>
     <body class="<?php if(empty($_SESSION['username'])) echo 'guest '; if(!empty($class)) echo $class; if(isset($reborn)) echo '" id="miiverse-will-reborn'; echo '" data-token="' . $_SESSION['token']; ?>">
         <div id="wrapper">
