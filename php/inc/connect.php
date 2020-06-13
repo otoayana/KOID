@@ -289,15 +289,15 @@ function uploadImage($file, $width = null, $height = null) {
         }
         $file = $imagick->getImagesBlob();
     }
-    if(empty(CLOUDINARY_CLOUDNAME) || empty(CLOUDINARY_UPLOADPRESET)) {
+    if(empty(CLOUD_NAME) || empty(CLOUD_pRESET)) {
         // TODO: make this support local file uploading?
         return null;
     }
     $mime = finfo_buffer(finfo_open(), $file, FILEINFO_MIME_TYPE);
-    $ch = curl_init('https://api.cloudinary.com/v1_1/' . urlencode(CLOUDINARY_CLOUDNAME) . '/image/upload');
+    $ch = curl_init('https://api.cloudinary.com/v1_1/' . urlencode(CLOUD_NAME) . '/image/upload');
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_POST, true);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query(['upload_preset' => CLOUDINARY_UPLOADPRESET, 'file' => 'data:' . $mime . ';base64,' . base64_encode($file)]));
+    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query(['upload_preset' => CLOUD_PRESET, 'file' => 'data:' . $mime . ';base64,' . base64_encode($file)]));
     $response = curl_exec($ch);
     $responseJSON = json_decode($response);
     $responseCode = curl_getinfo($ch, CURLINFO_RESPONSE_CODE);
