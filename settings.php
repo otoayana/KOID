@@ -17,3 +17,4 @@ const RE_SCRT = null; // recaptcha secret key. optional.
 
 // various.
 const CONTACT_EMAIL = ''; // the email you want to use for emergency contact (e.g. dmca notices etc.) optional.
+const HTTPS_PROXY = false; // Set this to true if you're using an HTTPS proxy like Cloudflare for your site's main domain, or false if you're not or don't know what that is. Required.
